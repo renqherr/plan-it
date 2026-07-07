@@ -28,8 +28,15 @@ export interface Tag {
 
 export interface AppState {
   version: number;
-  updatedAt: string; // ISO — used for last-write-wins in Phase 3
+  updatedAt: string; // ISO — used for last-write-wins
   tasks: Task[];
   groups: Group[];
   tags: Tag[];
+}
+
+/** Credentials for the shared jsonbin bin. Encoded (encrypted) into the QR in Phase 4. */
+export interface SyncConfig {
+  binId: string;
+  accessKey: string;
+  v: number; // config format version
 }

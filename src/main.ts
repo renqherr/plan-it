@@ -5,10 +5,12 @@ import { renderPlaceholder } from './views/placeholder';
 import { renderToday } from './views/TodayView';
 import { renderFavorites } from './views/FavoritesView';
 import { renderGroups, renderGroupDetail } from './views/GroupsView';
+import { renderSync } from './views/SyncView';
 import { currentRoute, onRouteChange, type Route } from './router';
 import { onLangChange } from './i18n/i18n';
 import { subscribe } from './state/store';
 import { onRerender } from './lib/rerender';
+import { initSync } from './sync/sync';
 
 const root = document.getElementById('app');
 if (!root) throw new Error('#app root not found');
@@ -21,6 +23,8 @@ function viewFor(route: Route): { header: HTMLElement; content: HTMLElement } {
       return renderFavorites();
     case 'groups':
       return route.groupId ? renderGroupDetail(route.groupId) : renderGroups();
+    case 'sync':
+      return renderSync();
     default:
       return renderPlaceholder(route.tab);
   }
@@ -39,3 +43,6 @@ onRouteChange(render);
 onLangChange(() => render(currentRoute()));
 subscribe(() => render(currentRoute()));
 onRerender(() => render(currentRoute()));
+
+// Kick off cloud sync (no-op until a bin is configured).
+initSync();

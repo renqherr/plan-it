@@ -304,11 +304,13 @@ jobs:
 - [x] Router extended for `#/group/:id`; shared PageHeader/Fab/EmptyState/TaskList helpers
 - [x] Verified in-browser (EN + ES): Today filter, groups, detail, favorites, editors
 
-### Phase 3 — Cloud persistence
-- [ ] jsonbin client (read/write)
-- [ ] Debounced sync + last-write-wins merge
-- [ ] Settings screen to enter/manage bin config
-- [ ] Loading / error / offline states
+### Phase 3 — Cloud persistence ✅
+- [x] jsonbin client (read/write) with typed errors (auth/notfound/network/server/bad-data)
+- [x] Sync engine: origin-aware store, whole-state last-write-wins, debounced push (1.5s)
+- [x] Connect flow validates before persisting; seeds a fresh bin (404) from local
+- [x] Offline/online handling (retry on reconnect) + ephemeral sync-status observable
+- [x] Sync view: Bin ID + Access Key form, live status, sync-now/disconnect, setup help
+- [x] Verified in-browser with stubbed fetch (hydrate, push, auth-error, offline, seed)
 
 ### Phase 4 — QR sync
 - [ ] Passphrase crypto helper (Web Crypto: PBKDF2 + AES-GCM)

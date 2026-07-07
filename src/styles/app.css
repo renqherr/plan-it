@@ -610,3 +610,87 @@ body {
   border-color: var(--text);
   box-shadow: 0 0 0 2px var(--surface) inset;
 }
+
+/* Sync view */
+.sync-status {
+  margin-bottom: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sync-status__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.sync-status__text {
+  font-weight: 600;
+}
+
+.sync-status__msg {
+  font-size: var(--fs-sm);
+  color: var(--danger);
+}
+
+.sync-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  background: var(--text-muted);
+}
+
+.sync-dot--idle {
+  background: var(--success);
+}
+
+.sync-dot--syncing {
+  background: var(--primary);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.sync-dot--error {
+  background: var(--danger);
+}
+
+.sync-dot--offline {
+  background: var(--favorite);
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.sync__form .btn {
+  width: 100%;
+}
+
+/* Help disclosure */
+.help {
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.help__summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.help__body {
+  margin-top: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Buttons inside the sync form should span the width */
+.sheet__form > .btn {
+  width: 100%;
+}
