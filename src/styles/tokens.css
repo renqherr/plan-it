@@ -1,0 +1,63 @@
+:root {
+  /* Color — light theme (default) */
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #eef0f4;
+  --border: #e2e5ea;
+  --text: #1b1d22;
+  --text-muted: #6b7280;
+  --primary: #4f6bed;
+  --primary-contrast: #ffffff;
+  --favorite: #f5a623;
+  --danger: #e5484d;
+  --success: #30a46c;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 999px;
+
+  /* Typography */
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  --fs-sm: 13px;
+  --fs-base: 15px;
+  --fs-lg: 18px;
+  --fs-xl: 22px;
+
+  /* Layout */
+  --app-max-width: 560px;
+  --nav-height: 64px;
+  --shadow: 0 1px 3px rgba(16, 20, 30, 0.08),
+    0 6px 20px rgba(16, 20, 30, 0.06);
+
+  /* Safe-area insets (notched phones) */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --surface: #181b21;
+    --surface-2: #21252d;
+    --border: #2a2f38;
+    --text: #e8eaed;
+    --text-muted: #9aa0ab;
+    --primary: #6d86f0;
+    --primary-contrast: #0f1115;
+    --favorite: #f5b53d;
+    --danger: #ef5c60;
+    --success: #43b581;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.35);
+  }
+}
