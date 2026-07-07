@@ -1,16 +1,28 @@
 /** Tiny hash-based router — works on GitHub Pages without server rewrites. */
 
-export type Route = 'today' | 'groups' | 'favorites' | 'sync';
+export type Tab = 'today' | 'groups' | 'favorites' | 'sync';
 
-const ROUTES: Route[] = ['today', 'groups', 'favorites', 'sync'];
-
-export function currentRoute(): Route {
-  const hash = window.location.hash.replace(/^#\/?/, '') as Route;
-  return ROUTES.includes(hash) ? hash : 'today';
+export interface Route {
+  tab: Tab;
+  /** Set when viewing a single group's detail (nested under the Groups tab). */
+  groupId?: string;
 }
 
-export function navigate(route: Route): void {
-  window.location.hash = `/${route}`;
+const TABS: Tab[] = ['today', 'groups', 'favorites', 'sync'];
+
+export function currentRoute(): Route {
+  const hash = window.location.hash.replace(/^#\/?/, '');
+  const [seg, param] = hash.split('/');
+  if (seg === 'group' && param) return { tab: 'groups', groupId: param };
+  return { tab: (TABS as string[]).includes(seg) ? (seg as Tab) : 'today' };
+}
+
+export function navigate(tab: Tab): void {
+  window.location.hash = `/${tab}`;
+}
+
+export function navigateGroup(id: string): void {
+  window.location.hash = `/group/${id}`;
 }
 
 export function onRouteChange(handler: (route: Route) => void): void {

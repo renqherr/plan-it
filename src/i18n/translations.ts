@@ -12,11 +12,14 @@ export const dict = {
     'nav.groups': 'Groups',
     'nav.favorites': 'Favorites',
     'nav.sync': 'Sync',
+    'nav.back': 'Back',
 
     'today.title': 'Today',
     'today.subtitle': 'Your scheduled tasks',
     'today.empty': 'No tasks yet. Tap + to add your first one.',
+    'today.noMatch': 'No tasks match this filter.',
     'today.completed': 'Completed',
+    'filter.all': 'All',
 
     'action.add': 'Add task',
 
@@ -28,6 +31,11 @@ export const dict = {
     'editor.cancel': 'Cancel',
     'editor.delete': 'Delete',
     'editor.close': 'Close',
+    'editor.schedule': 'Schedule',
+    'editor.group': 'Group',
+    'editor.noGroup': 'No group',
+    'editor.tags': 'Tags',
+    'editor.noTags': 'No tags yet — create one from the Groups tab.',
 
     'task.complete': 'Mark complete',
     'task.incomplete': 'Mark as not done',
@@ -36,11 +44,26 @@ export const dict = {
 
     'groups.title': 'Groups',
     'groups.subtitle': 'Organize by list or project',
-    'groups.empty': 'Groups arrive in Phase 2.',
+    'groups.empty': 'No groups yet. Create one to organize tasks.',
+    'groups.section': 'Groups',
+    'groups.add': 'New group',
+    'group.newTitle': 'New group',
+    'group.editTitle': 'Edit group',
+    'group.namePlaceholder': 'Group name',
+    'group.empty': 'No tasks in this group yet.',
+
+    'tags.section': 'Tags',
+    'tags.add': 'New tag',
+    'tags.empty': 'No tags yet.',
+    'tag.newTitle': 'New tag',
+    'tag.editTitle': 'Edit tag',
+    'tag.namePlaceholder': 'Tag name',
+
+    'label.color': 'Color',
 
     'favorites.title': 'Favorites',
     'favorites.subtitle': 'Your starred tasks',
-    'favorites.empty': 'Star tasks to see them here (Phase 2).',
+    'favorites.empty': 'No favorites yet. Tap the star on a task.',
 
     'sync.title': 'Sync',
     'sync.subtitle': 'Link your devices',
@@ -53,11 +76,14 @@ export const dict = {
     'nav.groups': 'Grupos',
     'nav.favorites': 'Favoritas',
     'nav.sync': 'Sincronizar',
+    'nav.back': 'Atrás',
 
     'today.title': 'Hoy',
     'today.subtitle': 'Tus tareas programadas',
     'today.empty': 'Aún no hay tareas. Toca + para añadir la primera.',
+    'today.noMatch': 'Ninguna tarea coincide con este filtro.',
     'today.completed': 'Completadas',
+    'filter.all': 'Todas',
 
     'action.add': 'Añadir tarea',
 
@@ -69,6 +95,11 @@ export const dict = {
     'editor.cancel': 'Cancelar',
     'editor.delete': 'Eliminar',
     'editor.close': 'Cerrar',
+    'editor.schedule': 'Programar',
+    'editor.group': 'Grupo',
+    'editor.noGroup': 'Sin grupo',
+    'editor.tags': 'Etiquetas',
+    'editor.noTags': 'Aún no hay etiquetas: crea una desde la pestaña Grupos.',
 
     'task.complete': 'Marcar como completada',
     'task.incomplete': 'Marcar como no completada',
@@ -77,11 +108,26 @@ export const dict = {
 
     'groups.title': 'Grupos',
     'groups.subtitle': 'Organiza por lista o proyecto',
-    'groups.empty': 'Los grupos llegan en la Fase 2.',
+    'groups.empty': 'Aún no hay grupos. Crea uno para organizar tus tareas.',
+    'groups.section': 'Grupos',
+    'groups.add': 'Nuevo grupo',
+    'group.newTitle': 'Nuevo grupo',
+    'group.editTitle': 'Editar grupo',
+    'group.namePlaceholder': 'Nombre del grupo',
+    'group.empty': 'Este grupo aún no tiene tareas.',
+
+    'tags.section': 'Etiquetas',
+    'tags.add': 'Nueva etiqueta',
+    'tags.empty': 'Aún no hay etiquetas.',
+    'tag.newTitle': 'Nueva etiqueta',
+    'tag.editTitle': 'Editar etiqueta',
+    'tag.namePlaceholder': 'Nombre de la etiqueta',
+
+    'label.color': 'Color',
 
     'favorites.title': 'Favoritas',
     'favorites.subtitle': 'Tus tareas destacadas',
-    'favorites.empty': 'Marca tareas para verlas aquí (Fase 2).',
+    'favorites.empty': 'Aún no hay favoritas. Toca la estrella de una tarea.',
 
     'sync.title': 'Sincronizar',
     'sync.subtitle': 'Vincula tus dispositivos',

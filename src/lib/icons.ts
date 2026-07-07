@@ -34,6 +34,10 @@ export const ui = {
     ),
   plus: (cls: string) => glyph('<path d="M12 5v14M5 12h14"/>', cls),
   close: (cls: string) => glyph('<path d="M6 6l12 12M18 6L6 18"/>', cls),
+  back: (cls: string) => glyph('<path d="M15 5l-7 7 7 7"/>', cls),
+  chevron: (cls: string) => glyph('<path d="M9 6l6 6-6 6"/>', cls),
   trash: (cls: string) =>
     glyph('<path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/>', cls),
+  pencil: (cls: string) =>
+    glyph('<path d="M4 20h4L18.5 9.5a2 2 0 0 0-2.8-2.8L5 17.2V20z"/><path d="M14 6l4 4"/>', cls),
 };

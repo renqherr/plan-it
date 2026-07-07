@@ -295,11 +295,14 @@ jobs:
 - [x] Task editor bottom sheet (create + edit + delete), all strings i18n'd
 - [x] Verified end-to-end in-browser (add/edit/complete/favorite/delete + reload persistence)
 
-### Phase 2 — Organization
-- [ ] Groups (CRUD, assign task to group)
-- [ ] Tags (CRUD, assign, filter)
-- [ ] Favorites (toggle + view)
-- [ ] Scheduling (date/time picker, sort/overdue)
+### Phase 2 — Organization ✅
+- [x] Groups: CRUD with color, task counts, list + detail view, cascade-unassign on delete
+- [x] Tags: CRUD with color, assign via editor chips, tag-filter bar on Today, cascade-remove on delete
+- [x] Favorites view (star toggle already wired in Phase 1)
+- [x] Scheduling: datetime picker, locale-aware labels, schedule sort + overdue highlight
+- [x] Editor extended (schedule/group/tags); group detail pre-assigns new tasks
+- [x] Router extended for `#/group/:id`; shared PageHeader/Fab/EmptyState/TaskList helpers
+- [x] Verified in-browser (EN + ES): Today filter, groups, detail, favorites, editors
 
 ### Phase 3 — Cloud persistence
 - [ ] jsonbin client (read/write)

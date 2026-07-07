@@ -40,6 +40,31 @@ body {
   min-width: 0;
 }
 
+.shell__title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.header__back {
+  flex-shrink: 0;
+  margin-left: -6px;
+}
+
+/* Colored dot (groups) */
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.dot--lg {
+  width: 14px;
+  height: 14px;
+}
+
 .shell__title {
   font-size: var(--fs-xl);
   font-weight: 700;
@@ -223,6 +248,46 @@ body {
   overflow-wrap: anywhere;
 }
 
+/* Task meta row: schedule · group · tags */
+.task__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+  font-size: 12px;
+}
+
+.task__schedule {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.task__schedule.is-overdue {
+  color: var(--danger);
+}
+
+.task__group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-muted);
+}
+
+.tag-chip {
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--chip, var(--border));
+  color: var(--chip, var(--text-muted));
+  background: transparent;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.tag-chip--interactive {
+  cursor: pointer;
+}
+
 .task.is-completed .task__title {
   text-decoration: line-through;
   color: var(--text-muted);
@@ -388,4 +453,160 @@ body {
 .icon-btn__icon {
   width: 22px;
   height: 22px;
+}
+
+/* Field label + hint */
+.field__label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.field__hint {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+/* Horizontal tag filter bar */
+.filter-bar {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-1);
+  scrollbar-width: none;
+}
+
+.filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-chip {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.filter-chip.is-active {
+  background: var(--chip, var(--primary));
+  color: #fff;
+  border-color: transparent;
+}
+
+/* Chip rows (tag select in editor, tag list in groups) */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chip-select {
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+
+.chip-select.is-selected {
+  background: var(--chip, var(--primary));
+  color: #fff;
+  border-color: transparent;
+}
+
+/* Group list */
+.group-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.group-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.group-row:active {
+  background: var(--surface-2);
+}
+
+.group-row__name {
+  flex: 1;
+  min-width: 0;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.group-row__count {
+  min-width: 22px;
+  padding: 0 6px;
+  text-align: center;
+  border-radius: var(--radius-full);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.group-row__chevron {
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Section header with an action */
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--primary);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.text-btn__icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Color swatches (label editor) */
+.swatch-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+}
+
+.swatch.is-selected {
+  border-color: var(--text);
+  box-shadow: 0 0 0 2px var(--surface) inset;
 }

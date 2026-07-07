@@ -24,7 +24,7 @@ Live at: `https://renqherr.github.io/plan-it/`
 
 - [x] **Phase 0** — Scaffold: Vite + TS, mobile shell, bottom-nav routing, i18n (EN/ES), Pages deploy
 - [x] **Phase 1** — Local task core: model, store, CRUD, localStorage, Today view + editor
-- [ ] **Phase 2** — Groups, tags, favorites, scheduling
+- [x] **Phase 2** — Groups (list+detail), tags + filter, Favorites view, scheduling (overdue/sort)
 - [ ] **Phase 3** — jsonbin cloud persistence
 - [ ] **Phase 4** — QR sync (passphrase-encrypted)
 - [ ] **Phase 5** — Polish
