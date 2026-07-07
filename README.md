@@ -26,5 +26,5 @@ Live at: `https://renqherr.github.io/plan-it/`
 - [x] **Phase 1** — Local task core: model, store, CRUD, localStorage, Today view + editor
 - [x] **Phase 2** — Groups (list+detail), tags + filter, Favorites view, scheduling (overdue/sort)
 - [x] **Phase 3** — jsonbin cloud persistence: client, LWW sync engine, Sync view
-- [ ] **Phase 4** — QR sync (passphrase-encrypted)
+- [x] **Phase 4** — QR sync: passphrase-encrypted export QR + camera/paste import
 - [ ] **Phase 5** — Polish

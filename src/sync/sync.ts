@@ -144,3 +144,7 @@ export async function syncNow(): Promise<void> {
 export function isConnected(): boolean {
   return config !== null;
 }
+
+export function getConfig(): SyncConfig | null {
+  return config;
+}

@@ -312,12 +312,13 @@ jobs:
 - [x] Sync view: Bin ID + Access Key form, live status, sync-now/disconnect, setup help
 - [x] Verified in-browser with stubbed fetch (hydrate, push, auth-error, offline, seed)
 
-### Phase 4 — QR sync
-- [ ] Passphrase crypto helper (Web Crypto: PBKDF2 + AES-GCM)
-- [ ] Generate QR from **encrypted** SyncConfig (prompt for passphrase)
-- [ ] Scan QR (camera) + decrypt with passphrase + manual fallback
-- [ ] Wrong-passphrase error handling
-- [ ] End-to-end two-device test
+### Phase 4 — QR sync ✅
+- [x] Passphrase crypto (`crypto/passphrase.ts`): Web Crypto PBKDF2 + AES-GCM, base64(salt|iv|ct)
+- [x] Export sheet: passphrase → encrypted QR + copyable code (`qrcode`, lazy-loaded)
+- [x] Import sheet: camera scan (`html5-qrcode`, lazy-loaded) or paste + decrypt → connect
+- [x] Wrong-passphrase / invalid-code error handling; camera-unavailable paste fallback
+- [x] QR libs code-split (main bundle stays ~12 kB gzipped)
+- [x] Verified: crypto round-trip, wrong/garbage rejection, export QR, paste import (2-device sim)
 
 ### Phase 5 — Polish
 - [ ] Swipe gestures, dark mode, empty states

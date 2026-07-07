@@ -6,6 +6,7 @@ import { getStatus, onStatusChange, type SyncState } from '../sync/status';
 import { connect, disconnect, syncNow, isConnected } from '../sync/sync';
 import { CONFIG_VERSION } from '../persistence/syncConfig';
 import { rerender } from '../lib/rerender';
+import { openExportSheet, openImportSheet } from '../components/DeviceLink';
 
 // Preserve form input across status-driven re-renders.
 let draftBinId = '';
@@ -93,12 +94,20 @@ function connectForm(busy: boolean): HTMLElement {
     el('button', { class: 'btn btn--primary', type: 'submit', disabled: busy }, [t('sync.connect')]),
   ]);
 
+  const divider = el('div', { class: 'or-divider' }, [el('span', {}, [t('qr.or')])]);
+
+  const scanBtn = el(
+    'button',
+    { class: 'btn btn--danger', type: 'button', onClick: () => openImportSheet() },
+    [t('qr.scan')],
+  );
+
   const help = el('details', { class: 'help' }, [
     el('summary', { class: 'help__summary' }, [t('sync.help.title')]),
     el('p', { class: 'help__body' }, [t('sync.help.body')]),
   ]);
 
-  return el('div', {}, [form, help]);
+  return el('div', {}, [form, divider, scanBtn, help]);
 }
 
 function connectedPanel(): HTMLElement {
@@ -107,6 +116,9 @@ function connectedPanel(): HTMLElement {
     el('p', { class: 'field__hint' }, [t('sync.connected')]),
     el('button', { class: 'btn btn--primary', type: 'button', disabled: busy, onClick: () => void syncNow() }, [
       t('sync.syncNow'),
+    ]),
+    el('button', { class: 'btn btn--primary btn--soft', type: 'button', onClick: () => openExportSheet() }, [
+      t('qr.link'),
     ]),
     el('button', { class: 'btn btn--danger', type: 'button', onClick: () => disconnect() }, [
       t('sync.disconnect'),

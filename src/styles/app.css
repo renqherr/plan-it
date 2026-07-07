@@ -694,3 +694,64 @@ body {
 .sheet__form > .btn {
   width: 100%;
 }
+
+.btn--soft {
+  background: var(--surface-2);
+  color: var(--primary);
+}
+
+/* "or" divider */
+.or-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* QR export result */
+.qr-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.qr-result:not(:empty) {
+  margin-top: var(--space-3);
+}
+
+.qr-img {
+  width: 240px;
+  height: 240px;
+  border-radius: var(--radius-md);
+  background: #fff;
+  padding: var(--space-2);
+}
+
+/* QR camera reader */
+.qr-reader {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.qr-reader:empty {
+  min-height: 0;
+}
+
+.qr-reader video {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
